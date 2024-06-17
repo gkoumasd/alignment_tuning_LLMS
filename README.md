@@ -13,7 +13,7 @@
 ## Data
 The models are trained with aligment tuning for language-molecule translation on LPM-24-Dataset.
 The dataset is now available at https://github.com/language-plus-molecules/LPM-24-Dataset.
-A manuscript detailing the dataset’s creation can be found here.
+A manuscript detailing the dataset’s creation can be found [here](https://arxiv.org/pdf/2403.00791).
 
 
 ## Usage
