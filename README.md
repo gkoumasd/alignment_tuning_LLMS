@@ -22,21 +22,18 @@ The repo includes codes for training LLMs across different strategies: a) Superv
 
 ### Train LLMs with alignment tuning.
 
-Follow the following step to train a model:
+Follow the following steps to train a model:
 
 1. Chose the appropriate model and training strategy as listed in `argument_parser.py`
 2. For SFT run `sft.py`, for DPO and CPO run `dpo.py` and for KTO run `kto.py` 
 3. Compbine the previous steps to train the LLMs. For example if your LLM is Meditron and you want to perform aligment tunning with CPO, run
-     `python dmo.py ----model_name Meditron --setting CPO`
+     `python dpo.py ----model_name Meditron --setting CPO`
 
 ### LLMs inference
 
-1. Standard-finetune: `python test.py --model_name RoBERTa`
-2. Multitask MLM: `python test.py --model_name RoBERTa_Multitask`
-3. Entailment: `python test.py --model_name RoBERTa_entail`
-4. Standard−prompt: `python test_prompt.py --model_name RoBERTa_Prompt`
-5. Prompt−demonstrations: `python test_prompt.py --model_name RoBERTa_Prompt_dem`
-6. Prompt−inverse: `python test_prompt.py --model_name RoBERTa_Prompt_inverse`
+For inference, run `python indeference.py` 
+1. Load the pretrained model in the python script e.g,.` checkpoint = "tmpbig/CPO_Meditron7b_reverse/checkpoint-1188"  `
+2. Define also the task, i.e., either language2molecule or molecule2language e.g., ` mode = "smiles2caption" `
 
 ## Contributing
 1. Fork the repository
@@ -57,9 +54,7 @@ If you find this project useful for your research, please consider citing it usi
 
 ```bibtex
 @inproceedings{gkoumas2023reformulating,
-  title={Reformulating NLP tasks to Capture Longitudinal Manifestation of Language Disorders in People with Dementia.},
-  author={Gkoumas, Dimitris and Purver, Matthew and Liakata, Maria},
-  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
-  pages={15904--15917},
-  year={2023}
+  title={Feedback-aligned Mixed LLMs for Machine Language-Molecule Translation},
+  author={Gkoumas, Dimitris and Liakata, Maria},
+  year={2024}
 }
